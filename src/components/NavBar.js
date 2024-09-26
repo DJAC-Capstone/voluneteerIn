@@ -5,6 +5,8 @@ import { getAllUsers, logoutUser} from '../redux/users';
 import Friends from './Friends'
 import Register from './Register';
 import Login from './Login';
+import Chatbox from './Chatbox'
+
 
 
 class NavBar extends Component {
@@ -14,7 +16,6 @@ class NavBar extends Component {
 	  }
 	async handleLogout(){
 		await this.props.logoutUser()
-		this.props.getUser()
 		window.location.hash = "#/"
 	  }
 
@@ -29,9 +30,10 @@ class NavBar extends Component {
 					<Login/>:
 					<div>
 						<Friends/>
+					 	<Chatbox />
 						<Link to="/home" >Home</Link>
 						<Link to="/events">Events</Link>
-						<Link to={`/users/profile/${user.id}`}><img src={user.imgURL}/>Hi {user.first_name}</Link>
+						<Link to={`/users/profile/${user.id}`}><img src={`0.jpg`}/>Hi {user.first_name}</Link>
 						<i className="fa fa-sign-out fa-3x" onClick={()=>this.handleLogout()}></i>
 					</div>
 				}

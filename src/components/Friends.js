@@ -30,7 +30,7 @@ class Friends extends Component {
   
     handleSubmit (e) {
       e.preventDefault()
-      this.props.findUser()
+      // this.props.findUser()
     }
 
     addFriend(user,friendId){
@@ -46,10 +46,10 @@ class Friends extends Component {
     }
 
     getFriendProfile(id){
-      console.log("usernameeee",this.state)
       this.setState({username: ''})
       this.props.findUser(id)
     }
+    
     unFollow(user,friendId){
       const arr=[]
       for(let i=0; i<user.friends.length;i++){
@@ -57,8 +57,8 @@ class Friends extends Component {
           arr.push(user.friends[i])
         }
       }
-        this.setState({username: ''})
-        this.props.followFrined(user.id, arr)
+      this.props.followFrined(user.id, arr)
+      this.setState({username: ''})
     }
 
     render () {
@@ -76,7 +76,6 @@ class Friends extends Component {
                 {
                 users.map( user => {
                   if (user.first_name.toLowerCase().indexOf(username.toLowerCase()) > -1 && username!== '') {
-                    console.log("userrr", user)
                       return (
                         <div key ={user.id}>
                           <img src={user.imgURL}/>

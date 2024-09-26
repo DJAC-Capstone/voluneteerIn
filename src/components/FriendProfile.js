@@ -15,7 +15,6 @@ class FriendProfile extends Component {
     }
     async componentDidMount(){
         await this.props.findUser( this.props.match.params.id)
-        
     }
     componentDidUpdate(prevProps){
         if(prevProps.user.id !== this.state.user.id){
@@ -43,7 +42,7 @@ class FriendProfile extends Component {
                             {
                             return (
                             <div className='oneEvent-users-profile' key={event.id}>
-                                <img src={`${user.imgURL}`}/>
+                                <img src={`${event.image}`}/>
                                 <ul>
                                     <Link to={`/events/${event.id}`}>{event.title}</Link>
                                     <li>{event.description}</li>

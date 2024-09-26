@@ -11,7 +11,8 @@ export class User extends Component {
         this.state = {
             user: '',
             events: [],
-            friends: []
+            friends: [],
+            img:'0.jpg'
         }
     }
     async componentDidMount(){
@@ -20,24 +21,28 @@ export class User extends Component {
     componentDidUpdate(){
         if(this.state.user === ''){
             this.setState({user: this.props.user, events: this.props.user.events, friends: this.props.user.friends})
+            if(this.props.user.imgURL !== null){
+                this.setState({img: this.props.user.imgURL })
+            }
         }
     }
     render(){
-        const {events, user, friends} = this.state
+        const {events, user, friends,img} = this.state
         return( 
             <div id="user-profile-main-container">
                 <div className='user-mini-profile'> 
-					<img src={user.imgURL}/>
+					<img src={img}/>
                     <h2>{user.first_name} {user.last_name}</h2>
                     <h4>Friends: {friends !==  null ? friends.length: 0}</h4>
                     <h4>Events: {events.length}</h4>
+                    <button><Link to =  "/updateUser">Update Profile</Link></button>
                 </div>   
                 <div className="activities">
                         {events.map(event =>
                             {
                             return (
                             <div className='oneEvent-users-profile' key={event.id}>
-                                <img src={user.imgURL}/>
+                                <img src={event.image}/>
                                 <ul>
                                     <Link to={`/events/${event.id}`}>{event.title}</Link>
                                     <li>{event.description}</li>

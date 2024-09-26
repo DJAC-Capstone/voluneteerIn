@@ -13,11 +13,7 @@ class EditEvent extends Component {
       date: '',
       city: '',
         state: '',
-    }
-   
-
-   
-      
+    }      
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -29,19 +25,16 @@ class EditEvent extends Component {
   }
   async handleSubmit(ev) {
     ev.preventDefault();
-    console.log(this.state)
     await this.props.updateEvent(this.state,this.props.match.params.id)	
-  
+		window.location.hash = "#/events"
   }
 
 
-  render(){
-
-      
-const { handleChange,handleSubmit} = this
-const {event}=this.props;
+  render(){   
+  const { handleChange,handleSubmit} = this
+  const {event}=this.props;
     return (
-      <div  style={{ marginTop: '100px',marginLeft:'50px' }}>
+      <div  style={{ marginTop: '100px',marginLeft:'50px' }} id='edit-event'>
         <form style={userStyles} onSubmit={handleSubmit}>
           <div style={{ margin: '20px' }}>
             <h3>Edit Event Info</h3>

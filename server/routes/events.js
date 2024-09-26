@@ -27,17 +27,10 @@ router.get('/:id', async (req, res, next) => {
 
 // sign up for the event
 router.put('/:id/editEvent', async (req, res, next) => {
-  try {
-    console.log(req.params.id)
-    
-     const signupEvent = await Events.findByPk(req.params.id);
-     console.log(req.body);
-
-   const event=  await signupEvent.update(req.body);
-     res.send(event);
-    // const signupEvent = await Events.findByPk(req.params.id);
-    // await signupEvent.update(req.body);
-    // res.send();
+  try {    
+    const signupEvent = await Events.findByPk(req.params.id);
+    const event=  await signupEvent.update(req.body);
+    res.send(event);
   } catch (ex) {
     next(ex);
   }
@@ -45,9 +38,7 @@ router.put('/:id/editEvent', async (req, res, next) => {
 // create event
 router.post('/create', async (req, res, next) => {
   try {
-    // console.log(req.body);
-    console.log(req.params.id)
-    const { title, description, date, city, state } = req.body
+    const { title, description, date, city, state ,image} = req.body
     const newEvent = await Events.create(
       {
         title,
@@ -55,7 +46,7 @@ router.post('/create', async (req, res, next) => {
         date,
         city,
         state,
-        imagePreviewUrl
+        image,
       });
     res.status(201).send(newEvent);
   } catch (err) {

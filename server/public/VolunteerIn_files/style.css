@@ -5,93 +5,46 @@ html> body{
     text-align: center;
 }
 
-/* ---Home---- */
 
 .main-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* align-content: stretch; */
     padding: 20px;
     
 }
 
 .left-container {
     display: flex;
+    height: 400px;
     flex-direction: column;
-    /* background-color: #f8f8f8; */
-    padding-right: 50px;
-    margin-top: 100px;
-    width: 500px;
-    
-
-}
-
-.left-container > * {
-    padding: 20px;
-   
-    
-}
-
-.profileImg-name > a {
-    margin: 5px;
-    font-size: 5rem;
-    width: 200px;
-    padding: 20px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: grey;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-}
-.profile-picture{
-    display: flex;
-    height: 300px;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    border-width: 2px;
-    border-style: solid;
     background-color: #f8f8f8;
+    padding-right: 50px;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 150px;
+    padding: 20px;
+    border-width: 2px;
+    border-style: solid;
     border-color: grey;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
-.profile-picture > a{
-    text-decoration: none;
-    font-size: 3rem;
+.left-container p {
+    font-size: 20px;
+    width: 200px;
+    text-align: center;
 }
 
-.profile-picture > img {
-    border-radius: 50%;
+.main-container img{
     height: 200px;
     width: 200px;
+    border-radius: 50%;
 }
-
 
 .user-post-container {
-    background-color: #f8f8f8;
-    margin-top: 10px;;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100px;
-    padding: 20px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: grey;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-   
-    /* border: solid 1px grey; */
-    /* background-color: #f8f8f8; */
-}
-
-.post-container {
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -106,136 +59,46 @@ html> body{
 .user-post-container input{
     text-align: center;
     font-size: large;
-    width: 100%;
     
 }
 
 .other-type-of-posts-container {
-    
     padding-top: 10px;
     display: flex;
-    justify-content: space-around;
-  
+    justify-content: space-between;
     
 }
 
-.last-post {
+/* -------- */
+
+.middle-container {
     background-color: #f8f8f8;
     margin: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    border-color:grey;
-    border-width: 2px;
-    border-style: solid
-
 }
 
 .other-users-post-container {
-    padding: 10px;
-    margin: 20px;
-    /* margin: 10px; */
-    text-align: center;
-    /* height:400px; */
-    padding: 20px;
-    /* border-width: 2px; */
-    border-style: solid;
-    border-color: grey;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}  
-
-.last-post img {
-  height: 300px;
-  width: 300px;
-} 
-
-.post-title{
-    font-size: large;
-    font-weight: bold;
-}
-
-.profile-pic {
-    margin-top: 20px;
+    padding-top: 50px;
 }
 
 .profile-pic-and-name-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-
-   
-
+    align-items: flex-start;
+    background-color: #f8f8f8;
 }
 
-.profile-pic-and-name-container > div {
-    width: 300px;
-}
+
 
 .profile-pic-and-name-container img{
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 100px;
+    max-width: 100px;
     border: solid 1px black;
     border-radius: 50%;
-    margin: 10px;
-
 }
 
-.profileImg-name {
-    background-color:#f8f8f8;
+.profile-pic-and-name-container div {
+    padding: 10px;
 }
-
-.profileImg-name > img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-height: 400px;
-    max-width: 400px;
-    border: solid 1px black;
-    border-radius: 50%;
-    margin: 10px;
-}
-
-
-
-
-/* -------- */
-
-.middle-container {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-around; */
-    width:700px;
-    margin-top:100px
-    
-}
-
-
-.middle-container > div{
-    padding: 25px;
-    background-color: #f8f8f8;
-    margin: 10px;
-    
-
-}
-
-.other-users-post-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* border: black solid 5px ; */
-    padding: 20px;
-    height: 300px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: grey;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-
-
 
 .other-users-post-text .full-name {
     font-weight: 900;
@@ -269,16 +132,13 @@ html> body{
     background-color: rgba(255, 255, 255, 0.671);
     position: fixed;
 }
-.user-mini-profile > img{
-    height: 15rem;
-    width: 15rem;
-}
 
 .activities{
     width: 70rem;
 }
 
 .oneEvent-users-profile{
+    /* border: solid 1px black; */
     margin-bottom: 2rem;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.671);
@@ -319,13 +179,13 @@ html> body{
 /* -------------------ChatBox--------------------- */
 .messages{
     display: inline-flex;
-    /* height: 30rem; */
+    height: 30rem;
     width: 100%;
     bottom: 0;
     z-index: 3;
     position: fixed;
     float: left;
-    padding-left: 17rem;
+    padding-left: 20rem;
 }
 .chatBox{
     border: black solid 1px;
@@ -336,7 +196,6 @@ html> body{
     border-top-right-radius: 10px;
     bottom: 2rem;
 }
-
 .chatBox >h4{
     text-align: center;
     border: black solid 1px;
@@ -356,6 +215,7 @@ html> body{
     bottom: -8px;
     left: -8px;
     position: fixed;
+
 }
 .chatBoxClose > form{
     margin-bottom: -1px;
@@ -363,23 +223,9 @@ html> body{
     bottom: -8px;
     left: -8px;
     position: fixed;
-}
 
-.message-history{
-    margin-left: 3rem;
-    margin-top: 2rem;
-    border-radius: 10px;
-    width: 25rem;
-    margin-bottom: 2rem;
-    padding:1rem;
-    height: 23rem;
-    overflow: auto;
-    text-decoration: none;
 }
-
 .showAllUsers{
-    /* padding-top: 1rem; */
-    overflow: auto;
     margin-left: 2rem;
     border: black solid 1px;
     height: 28rem;
@@ -405,7 +251,7 @@ html> body{
 }
 
 .showAllUsers > ul:hover{
-    background-color: rgba(173, 171, 171, 0.876);
+    background-color: rgb(173, 171, 171);
 }
 
 .messages > button{
@@ -416,9 +262,6 @@ html> body{
     width: 28rem;
     position: fixed;
     margin-left: 2rem;
-    height: 3rem;
-    background-color: rgb(169, 169, 169);
-
 }
 
 .chatBox > form {
@@ -436,7 +279,6 @@ html> body{
 
 }
 /* ------------------NavBar-------------------- */
-
 #navBar {
     top: 0;
     z-index: 1;
@@ -449,14 +291,7 @@ html> body{
     background-image: url(./volunteer-bg.jpg);
     background-repeat: no-repeat;
     background-size: auto;
-    background-color: #f8f8f8;
 }
-
-a {
-    color: #f8f8f8  ;
-}
-
-
 #navBar > h1 {
     margin: 0.5rem;
 }
@@ -507,7 +342,7 @@ a {
     font-size: 25px;
     color: black;
 }
-#navBar > div > a > img{
+#navBar > div >a>img{
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
@@ -558,62 +393,33 @@ a {
     width: 70rem;
     margin-top: 80px;
   }
-
   .singleeventContainer >img {
-      margin-left: 3rem;
     border-radius: 10px;
-    width: 65rem;
-    height: 30rem;
+    width: 70rem;
     box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px rgb(0, 107, 139);
   }
-
   .titleContainer{
     display: flex;
     justify-content: space-around;
   }
-
-  .button-container{
-    flex-direction: column;
-    width: 10rem;
-  }
-  .button-container > a > button{
-    width: 10rem;
-    height: 4rem;
-    background: rgb(56, 96, 148);
-    color: white;
-  }
-
-  .button-container > button {
-    margin-top: 3rem;
-    width: 10rem;
-    height: 4rem;
-    background: rgb(56, 96, 148);
-    color: white;
-    margin-bottom: 2rem;
-  }
-  .titleContainer > button:hover {
+  .titleContainer > button {
     width: 10rem;
     height: 4rem;
     margin-top: 4rem;
-    background: rgba(56, 96, 148, 0.733);
+    background: rgb(56, 96, 148);
     color: white;
   }
+  .titleContainer > ul > h4 {
+    color: rgb(235, 63, 63);
+  }
 
-  .titleContainer > ul > h3 {
-    color:rgba(233, 61, 46, 0.931);
-  }
-  .titleContainer > ul > h2 {
-    text-transform: capitalize;
-  }
   .description,  .eventLocation {
       border: black 1px solid;
-      width: 63rem;
-      height: 45rem;
+      width: 34rem;
+      height: 40rem;
       border-radius: 10px;
-      padding: 1rem;
-      background-color: #f8f8f8;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 2rem;
+      background-color: rgba(246, 244, 242, 0.726);
   }
 
   .dataContainer{
@@ -640,38 +446,31 @@ a {
   }
   .oneEvent{
     margin: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    height: 28rem;
+    width: 30rem;
     border: black 1px solid;
     border-radius: 10px;
     padding: 1rem;
     box-shadow: 1px 1px 2px black, 0 0 25px rgb(204, 123, 121), 0 0 5px rgb(139, 32, 0);
   }
-
   .oneEvent > img{
     width: 100%;
     height: 8rem;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
-
   .oneEvent > ul >li{
     list-style: none;
     text-decoration: none;
     font-size: 16px;
   }
-
   .oneEvent > ul >a{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
-    text-transform: capitalize;
   }
-
   .oneEvent > ul >h5{
     color: tomato;
   }
-  
   .oneEvent > button{
     width: 100%;
     background: rgb(56, 96, 148);
@@ -681,16 +480,7 @@ a {
 
   .createEvent{
       padding-top: 90px;
-      margin-left: 40px;
+      margin-left: auto;
       margin-right: auto;
       width: 70rem;
-  }
-  /* ------------------editEvent---------------------- */
-
-  #edit-event{
-    margin-left: 40px;
-    /* margin-left: auto; */
-    margin-right: auto;
-    width: 50rem;
-    margin-top: 80px;
   }

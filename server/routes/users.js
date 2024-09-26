@@ -13,7 +13,6 @@ router.get('/', async (req, res, next) => {
 });
 router.get('/get-user', async (req, res, next) => {
   try {
-    console.log(req)
     const singleUser = await User.findByPk(req.user.id, { include: [Events] })
       res.send(singleUser)
   }
@@ -38,13 +37,6 @@ router.get('/:id', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
   try {
-  // console.log(req.params);
-  console.log('put is being called');
- 
-  // const hashed = await bcrypt.hash(password, 10)
-  // console.log(first_name)
-  // const password = req.body.password
-  // const hashedPass = await bcrypt.hash(password, 10)
   const updatedUser = await User.update(
     {
       first_name: req.body.first_name,
@@ -72,7 +64,7 @@ router.delete('/:id', async (req, res, next) => {
 });
 
 
-router.put('/follow', async (req, res, next) => {
+router.put('/follow/frined', async (req, res, next) => {
   try {
     const followedUser = await User.findByPk(req.body.id);
     const user=await followedUser.update({friends: req.body.arr });    

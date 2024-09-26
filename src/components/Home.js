@@ -11,12 +11,15 @@ export class Home extends Component {
       posts:[],
       events: [],
       allUsers: [],
-      userEvents: []
+      userEvents: [],
+      img:'0.jpg'
     }
-   // this.createPostButton = this.createPostButton.bind(this)
   }
   componentDidMount() {
     this.props.fetchEvents()
+    if(this.props.allUsers.user.imgURL !== null){
+      this.setState({img: this.props.allUsers.user.imgURL })
+    }
     this.props.fetchPosts()
     this.setState({  posts:this.props.posts})
   }
@@ -34,13 +37,15 @@ export class Home extends Component {
       <div className="main-container">
         <div className="left-container">
           <div className="profile-picture">
-            <img src={`0.jpg`}/>
-            <Link to={`/users/${user.id}`}>{`${user.first_name}${user.last_name}`}</Link>
+            <img src={this.state.img}/>
+            <Link to={`/users/profile/${user.id}`}>{`${user.first_name} ${user.last_name}`}</Link>
           </div>
           <div className="user-post-container">
             <input placeholder="Post"></input>
             <div className="other-type-of-posts-container">
               <button><Link to = "/createEvent">Create Event</Link></button>
+              {/* <button>Upload Photo</button> */}
+              <button>Post</button>
               <button><Link to =  "/updateUser">Update Profile</Link></button>
               <button><Link to = "/posts">Create Post</Link></button>
             </div>
@@ -74,7 +79,6 @@ export class Home extends Component {
           :
           user.friends.map (friendID => {
           let friendInfo = users.find((friend) => friend.id === friendID)
-          console.log("user.friends",user.friends)
           return (
             <div key={uuid()} className="other-users-post-container">
               <div className="profile-pic-and-name-container">
@@ -88,7 +92,6 @@ export class Home extends Component {
                   </div>
                   }
                 </div>
-                  )
               </div>
             </div>
           )

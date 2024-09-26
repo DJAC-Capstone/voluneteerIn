@@ -30,7 +30,6 @@ export const _findUser = (foundUser) => ({
 });
 
 const findUser = (id) => async (dispatch) => {
-  console.log(id)
   const res = await axios.get(`/api/users/${id}`);
   console.log(res.data)
   dispatch(_findUser(res.data));
@@ -88,7 +87,7 @@ export const _followFrined = (user) => ({
 });
 
 const followFrined = (id,arr) => async (dispatch) => {
-  const res = await axios.put('/api/users/follow', {id,arr});
+  const res = await axios.put('/api/users/follow/frined', {id,arr});
   dispatch(_followFrined(res.data));
 };
 

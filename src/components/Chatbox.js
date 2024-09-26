@@ -15,7 +15,6 @@ class Chat extends Component {
       openedChats: []
     };
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
     this.oppenMessage =this.oppenMessage.bind(this);
     this.newMessage = this.newMessage.bind(this);
   }
@@ -38,43 +37,28 @@ class Chat extends Component {
       }
   }
   newMessage(user){
-    console.log(user);
     this.setState({ openedChats: [...this.state.openedChats, user] });
-
-  //   const { handleChange, handleSubmit } = this;
-  //   const messageBox = document.querySelector('.messages');
-  //   const message = document.createElement('div');
-  //   message.className = "chatBox";
-  //   message.innerHTML = `
-  //     <div id="message-container"> </div>
-  //     <form onSubmit=${handleSubmit} >
-  //       <input type="text" id="message-input" onChange=${handleChange} />
-  //       <button type="submit" id="send-button">Sned</button>
-  //     </form>
-  // `;
-  //   messageBox.appendChild(message);
   }
 
   render() {
-    const { handleChange, handleSubmit, newMessage } = this;
-    const {users}=this.props
+    const { newMessage } = this;
+    const {users, user}=this.props
     const { openedChats } = this.state;
+    const friends = user.friends
     return (
       <div className='messages' >
-       
         <div className={this.state.class}>
-          {
-            users.map(user =>{
-              return (
-              <ul key={user.id} onClick={()=>newMessage(user)}>{user.first_name}</ul>
-              )
-            })
+          {user.friends?
+            users.map(user => 
+              friends.indexOf(user.id) > -1?             
+                  <ul key={user.id} onClick={()=>newMessage(user)}>{user.first_name}</ul>:null
+            ):null        
           }
         </div>
         <button onClick={()=>this.oppenMessage()}>Messages</button>
           {
-            openedChats.length && openedChats.map(chat => (
-              <Messages chat={chat} />
+            openedChats.length > 0 && openedChats.map(chat => (
+              <Messages chat={chat} key={chat.id} />
             ))
           }
       </div>
@@ -83,9 +67,10 @@ class Chat extends Component {
 }
 
 export default connect(
-  ({ user, users }) => ({
-    user: user,
-    users: users.users
+  (state) => ({
+    user: state.users.user,
+    users: state.users.users,
+    state
   }),
   (dispatch) => ({
     getAllUsers: () => dispatch(getAllUsers()),

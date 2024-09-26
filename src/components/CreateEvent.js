@@ -15,7 +15,7 @@ class CreateEvent extends Component {
       date: '',
       city: '',
 	    state: '',
-
+      image: 'https://cdn.givecloud.co/s/files/1/0000/0696/files/volunteer-banner-1.jpg'
     };  
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,7 +40,7 @@ class CreateEvent extends Component {
         description: '',
         date: '',
         city: '',
-        state: '',
+        state: ''
     });	
     this.props.history.push('/events')
   }
